@@ -6,7 +6,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 script {
-                    some_pipeline_module = load 'some-pipeline.groovy'
+                    some_pipeline_module = load 'some-module.groovy'
                     echo 'Hello world!'
                     echo "${some_pipeline_module.a}"
                 }
