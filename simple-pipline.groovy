@@ -22,5 +22,5 @@ pipeline {
 }
 
 def func(path) {
-    evaluate readTrusted path
+    evaluate readTrusted(path)
 }
