@@ -10,7 +10,6 @@ pipeline {
             steps {
                 echo 'Hello world!'
                 echo "${a}"
-                throw 1
             }
         }
     }
