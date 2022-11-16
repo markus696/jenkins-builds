@@ -2,7 +2,7 @@ import java.io.File
 
 def some_pipeline_module
 
-func('some-module.groovy')
+vi_module 'some-module.groovy'
 
 pipeline {
     agent any
@@ -19,6 +19,6 @@ pipeline {
     }
 }
 
-def func(path) {
+def vi_module(path) {
     evaluate readTrusted(path)
 }
