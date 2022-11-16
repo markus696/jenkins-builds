@@ -1,5 +1,5 @@
 
-def some_pipeline = load 'some-pipeline'
+def some_pipeline = load 'some-pipeline.groovy'
 
 pipeline {
     agent any
