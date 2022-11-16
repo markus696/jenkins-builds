@@ -22,5 +22,5 @@ pipeline {
 }
 
 def func(path) {
-    evaluate new File(path)
+    readTrusted new File(path)
 }
