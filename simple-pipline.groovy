@@ -1,3 +1,5 @@
+import java.io.File
+
 def some_pipeline_module
 
 func('some-module.groovy')
@@ -20,5 +22,5 @@ pipeline {
 }
 
 def func(path) {
-    readTrusted path
+    evaluate readTrusted path
 }
