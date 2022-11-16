@@ -1,7 +1,5 @@
 
-
-
-vi_module "some-module.groovy"
+def some_pipeline = load 'some-pipeline'
 
 pipeline {
     agent any
@@ -9,12 +7,8 @@ pipeline {
         stage('Stage 1') {
             steps {
                 echo 'Hello world!'
-                echo "${a}"
+                echo "${some_pipeline.a}"
             }
         }
     }
-}
-
-def vi_module(String path) {
-    evaluate(new File(path))
 }
