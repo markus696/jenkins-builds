@@ -1,4 +1,3 @@
-
 def some_pipeline_module
 
 pipeline {
@@ -6,9 +5,12 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                some_pipeline_module = load 'some-pipeline.groovy'
-                echo 'Hello world!'
-                echo "${some_pipeline_module.a}"
+                script {
+                    some_pipeline_module = load 'some-pipeline.groovy'
+                    echo 'Hello world!'
+                    echo "${some_pipeline_module.a}"
+                }
+
             }
         }
     }
