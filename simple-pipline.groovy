@@ -1,4 +1,8 @@
+import java.io.File
+
 def some_pipeline_module
+
+func('some-module.groovy')
 
 pipeline {
     agent any
@@ -9,6 +13,7 @@ pipeline {
                     some_pipeline_module = load 'some-module.groovy'
                     echo 'Hello world!'
                     echo "${some_pipeline_module.a}"
+                    echo "${a}"
                 }
 
             }
@@ -17,5 +22,5 @@ pipeline {
 }
 
 def func(path) {
-    load path
+    evaluate new File(path)
 }
