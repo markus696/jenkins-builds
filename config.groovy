@@ -1,10 +1,10 @@
 [
     'one' : [
         url: 'url one',
-        name: "${PERSON}"
+        name: "${params.PERSON}"
     ],
     'one' : [
         url: 'url one',
-        name: "${PERSON}"
+        name: "${params.PERSON}"
     ]
 ]
