@@ -10,7 +10,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 script {
-                    config = readYaml file: 'configs/ik5/config.yaml'
+                    def config = readYaml file: 'configs/ik5/config.yaml'
                     echo config.toString()
                 }
                 /*dir('repos') {
