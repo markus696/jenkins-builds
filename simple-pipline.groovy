@@ -9,11 +9,13 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                dir('repos') {
+                def config = readYaml file: 'configs/ik5/config.yaml'
+                echo config.toString()
+                /*dir('repos') {
                     checkout([$class: 'GitSCM',
-                              branches: [[name: '*/master']],
+                              branches: [[name: 'master']],
                               userRemoteConfigs: [[url: 'https://github.com/markus696/data_mover.git']]])
-                }
+                }*/
             }
         }
     }
