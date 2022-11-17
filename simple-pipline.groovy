@@ -9,8 +9,10 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                config = readYaml file: 'configs/ik5/config.yaml'
-                echo config.toString()
+                script {
+                    config = readYaml file: 'configs/ik5/config.yaml'
+                    echo config.toString()
+                }
                 /*dir('repos') {
                     checkout([$class: 'GitSCM',
                               branches: [[name: 'master']],
