@@ -9,6 +9,7 @@ vi_include 'vi_modules/repo_downloader.groovy'
 buildConfig = [:]
 
 pipeline {
+    agent any
     environment {
         some = 'some'
     }
