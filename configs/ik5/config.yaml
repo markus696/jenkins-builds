@@ -1,10 +1,10 @@
 artifactsDir: 'artifacts'
 repositories:
-  - vi-core:
-      url: 'https://github.com/markus696/data_mover.git'
-      branch: '*/$'
-      defaultBranch: '*/main'
-  - dlcommon:
-      url: 'https://github.com/markus696/data_mover.git'
-      branch: '*/$'
-      defaultBranch: '*/main'
+  vi-core:
+    url: 'https://github.com/markus696/data_mover.git'
+    branch: '*/$'
+    defaultBranch: '*/main'
+  dlcommon:
+    url: 'https://github.com/markus696/data_mover.git'
+    branch: '*/$'
+    defaultBranch: '*/main'
