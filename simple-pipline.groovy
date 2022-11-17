@@ -1,6 +1,6 @@
-import java.io.File
-
-def some_pipeline_module
+def vi_module(path) {
+    evaluate readTrusted(path)
+}
 
 vi_module 'some-module.groovy'
 
@@ -9,16 +9,13 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                script {
-                    echo 'Hello world!'
-                    echo "${a}"
+                dir('repos') {
+                    checkout([$class: 'GitSCM',
+                              branches: [[name: '*/master']],
+                              userRemoteConfigs: [[url: 'https://github.com/markus696/data_mover.git']]])
                 }
-
             }
         }
     }
 }
 
-def vi_module(path) {
-    evaluate readTrusted(path)
-}
