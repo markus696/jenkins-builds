@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                def config = readYaml file: 'configs/ik5/config.yaml'
+                config = readYaml file: 'configs/ik5/config.yaml'
                 echo config.toString()
                 /*dir('repos') {
                     checkout([$class: 'GitSCM',
