@@ -16,8 +16,7 @@ getRepositories = { config ->
 pushRepositories = { config ->
     config.repos.each { repoName, repo ->
         dir("${config.from}/${repoName}") {
-            gitPush([
-                    $class: 'GitSCM',
+            gitPush(gitScm:[$class: 'GitSCM',
                     userRemoteConfigs: [[credentialsId: "${repo.credsId}", url: "${repo.url}"]]
             ])
         }
