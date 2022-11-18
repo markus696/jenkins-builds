@@ -25,9 +25,11 @@ pipeline {
             steps {
                 script {
                     buildConfig = vi_include 'vi_configs/szvi-ik5.config.groovy'
-                    echo buildConfig.toString()
-                    echo buildConfig.repositories.subMap(['vi-core', 'dlcommon']).toString()
-                    getRepositories from: buildConfig.repositories, to: "${WORKSPACE}/repos"
+                    getRepositories repos: buildConfig.repositories, to: "${WORKSPACE}/repos"
+
+
+
+                    pushRepositories repos: buildConfig.repositories, from: ${WORKSPACE}/repos
                 }
             }
         }
