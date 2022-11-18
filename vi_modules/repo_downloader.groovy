@@ -17,7 +17,7 @@ pushRepositories = { config ->
     config.repos.each { repoName, repo ->
         dir("${config.from}/${repoName}") {
             gitPush(gitScm:[$class: 'GitSCM',
-                    userRemoteConfigs: [[name: "refs/heads/${repo.branch}", credentialsId: "${repo.credsId}", url: "${repo.url}"]],
+                    userRemoteConfigs: [[name: "refs/heads", credentialsId: "${repo.credsId}", url: "${repo.url}"]],
                     branches: [[name: "*/${repo.branch}/*"]]
             ], targetRepo: "refs/heads", targetBranch: "${repo.branch}")
         }
