@@ -19,7 +19,7 @@ pushRepositories = { config ->
             sh 'git add .'
             sh 'git status'
             sh 'git commit -m "From Jenkins"'
-            sh "git push HEAD:${repo.branch}"
+            sh "git push HEAD:origin/${repo.branch}"
         }
     }
 }
