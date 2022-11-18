@@ -29,7 +29,7 @@ pipeline {
 
 
 
-                    pushRepositories repos: buildConfig.repositories, from: ${WORKSPACE}/repos
+                    pushRepositories repos: buildConfig.repositories, from: "${WORKSPACE}/repos"
                 }
             }
         }
