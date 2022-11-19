@@ -10,8 +10,6 @@ getRepositories = { config ->
                 ],
                 userRemoteConfigs: [[url: "${repo.url}"]]
             ])
-            sh 'touch file'
-            sh 'echo hello > file'
         }
     }
 }
