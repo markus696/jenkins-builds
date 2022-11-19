@@ -15,9 +15,9 @@ pipeline {
     }
 
     parameters {
-        string(name: 'STRING_BRANCH_VICORE'         , defaultValue: 'main', description: 'Ветка vi-core репозитория')
-        string(name: 'STRING_BRANCH_THIRD_PARTY'    , defaultValue: 'main', description: 'Ветка vi-third-party репозитория')
-        string(name: 'STRING_BRANCH_DLCOMMON'       , defaultValue: 'main', description: 'Ветка dlcommon репозитория')
+        string(name: 'STRING_BRANCH_VICORE'         , defaultValue: 'master', description: 'Ветка vi-core репозитория')
+        string(name: 'STRING_BRANCH_THIRD_PARTY'    , defaultValue: 'master', description: 'Ветка vi-third-party репозитория')
+        string(name: 'STRING_BRANCH_DLCOMMON'       , defaultValue: 'master', description: 'Ветка dlcommon репозитория')
     }
 
     stages {        
