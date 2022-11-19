@@ -16,10 +16,10 @@ getRepositories = { config ->
 pushRepositories = { config ->
     config.repos.each { repoName, repo ->
         dir("${config.from}/${repoName}") {
+            sh "git checkout ${repo.branch}"
             sh 'git add .'
-            sh 'git status'
             sh 'git commit -m "From Jenkins"'
-            sh "git push HEAD:origin/${repo.branch}"
+            sh "git push"
         }
     }
 }
