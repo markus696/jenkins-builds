@@ -20,7 +20,7 @@ pushRepositories = { config ->
     config.repos.each { repoName, repo ->
         dir("${config.from}/${repoName}") {
             withCredentials([gitUsernamePassword(credentialsId: "${repo.credsId}", gitToolName: 'Default')]) {
-                sh "git checkout origin ${repo.branch}"
+                sh "git checkout ${repo.branch}"
                 sh 'git add .'
                 sh 'git commit -m "From Jenkins"'
                 sh "git push"
